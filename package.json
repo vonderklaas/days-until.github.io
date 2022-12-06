@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://garbalau-github.github.io/days-until.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
