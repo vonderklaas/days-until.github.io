@@ -1,0 +1,40 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-control {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.input-date {
+  padding: 1em;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  appearance: none;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+
+.card {
+  padding: 2em;
+}
+
+.info-messages {
+  height: 60px;
+}
+
+.days-until-text {
+  font-size: 1.2em;
+}
