@@ -1,39 +1,40 @@
 import { useState } from 'react';
+
+import './App.css';
+
 import Header from './components/Header/Header';
 import ErrorBanner from './components/ErrorBanner/ErrorBanner';
 import Button from './components/Button/Button';
-import './App.css';
 
-const getTodayDate = (): string => {
-  const dateString = new Date().toISOString();
-  const dateOnlyString = dateString.substring(0, 10);
-  return dateOnlyString;
-};
+// Datepicker
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+const getTodayDate = (): Date => new Date();
 
 const App = () => {
-  const [startDate, setStartDate] = useState(getTodayDate);
-  const [endDate, setEndDate] = useState('');
+  const [startDate, setStartDate] = useState<Date>(getTodayDate);
+  const [endDate, setEndDate] = useState<Date>(getTodayDate);
   const [diffDays, setDiffDays] = useState<null | number | string>(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [isError, setIsError] = useState(false);
 
   const hideErrorBanner = (): void => setIsError(false);
 
-  const getDayCount = (startDate: string, endDate: string): void => {
+  const getDayCount = (startDate: Date, endDate: Date): void => {
     if (!startDate || !endDate) {
       setIsError(true);
       setDiffDays(null);
-      setErrorMessage(`Please, add both dates!`);
+      setErrorMessage(`Please, fill out both fields!`);
       return;
     }
     if (endDate < startDate) {
       setIsError(true);
       setDiffDays(null);
-      setErrorMessage(`Time travel?`);
+      setErrorMessage(`You can't time travel, don't you?`);
       return;
     }
 
-    // Converting & Calculations
     const startTime = new Date(startDate).getTime();
     const endTime = new Date(endDate).getTime();
     const diffTime = endTime - startTime;
@@ -41,12 +42,12 @@ const App = () => {
 
     if (diffDays === 0) {
       setIsError(false);
-      setDiffDays('Today is the day!');
+      setDiffDays('Today is the day! Congratulations!');
       return;
     }
 
     setIsError(false);
-    setDiffDays(`Pretty soon, ${diffDays} more days`);
+    setDiffDays(`Pretty soon, ${Math.ceil(diffDays)} more days`);
   };
 
   return (
@@ -54,35 +55,30 @@ const App = () => {
       <Header />
       <h2>How many days until?</h2>
       <div className='card'>
-        <form className='form'>
+        <div className='form'>
           <div className='form-control'>
             <label>Start Date</label>
-            <input
-              type='date'
-              value={startDate}
-              className='input-date'
-              min={new Date().toISOString().split('T')[0]}
-              onChange={(e) => setStartDate(e.target.value)}
+            <DatePicker
+              selected={startDate}
+              dateFormat='dd.MM.yyyy'
+              minDate={new Date()}
+              onChange={(updatedDate: Date) => setStartDate(updatedDate)}
             />
           </div>
           <div className='form-control'>
             <label>End Date</label>
-            <input
-              type='date'
-              value={endDate}
-              className='input-date'
-              min={new Date().toISOString().split('T')[0]}
-              onChange={(e) => setEndDate(e.target.value)}
+            <DatePicker
+              selected={endDate}
+              dateFormat='dd.MM.yyyy'
+              minDate={new Date()}
+              onChange={(updatedDate: Date) => setEndDate(updatedDate)}
             />
           </div>
-        </form>
-        <br />
+        </div>
         <Button
           text='Calculate'
           clickFunction={() => getDayCount(startDate, endDate)}
         />
-        <br />
-        <br />
       </div>
       <div className='info-messages'>
         {diffDays && <div className='days-until-text'>{diffDays}</div>}

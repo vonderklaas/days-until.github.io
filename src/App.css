@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2em;
 }
 
 .form-control {
@@ -37,6 +38,7 @@
 }
 
 .info-messages {
+  margin-bottom: 1em;
   height: 60px;
 }
 
