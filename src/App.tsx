@@ -20,7 +20,6 @@ const App = () => {
   const hideErrorBanner = (): void => setIsError(false);
 
   const getDayCount = (startDate: string, endDate: string): void => {
-    console.log(startDate);
     // Validation
     if (!startDate || !endDate) {
       setIsError(true);
