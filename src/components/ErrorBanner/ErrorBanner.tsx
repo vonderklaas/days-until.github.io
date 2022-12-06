@@ -7,11 +7,8 @@ interface ErrorBannerInterface {
 
 const ErrorBanner = ({ message, hideErrorBanner }: ErrorBannerInterface) => {
   return (
-    <div className='error-wrapper'>
+    <div className='error-wrapper' onClick={() => hideErrorBanner()}>
       <p className='error-text'>{message}</p>
-      <div className='error-close' onClick={() => hideErrorBanner()}>
-        &times;
-      </div>
     </div>
   );
 };

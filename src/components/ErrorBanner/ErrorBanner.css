@@ -1,19 +1,10 @@
 .error-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #f07178;
-  border-radius: 5px;
-  max-width: 270px;
-  margin: 0 auto;
   font-size: 1.2em;
+  text-align: center;
+  color: #f07178;
+  cursor: pointer;
 }
 
 .error-text {
   margin: 0;
-}
-
-.error-close {
-  cursor: pointer;
-  font-size: 1.1em;
 }
