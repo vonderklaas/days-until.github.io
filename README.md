@@ -1,4 +1,3 @@
 # days-until.github.io
 
-I made this very handy minimalistic website for dreamers and over-thinkers like me, to the 
-ability to know how many days there are until a certain event of yours
+Sometimes daydreamers like me want to know how many days are there until a certain moment, if you don't want to perform "complex" calculations - you can use this app
