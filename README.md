@@ -1,5 +1,6 @@
-### days-until.github.io
+### Days Until
 
-This is minimalistic React + TS application. Daydreamers like me want to know how many days are there until a certain moment, if you don't want to perform "complex" calculations, you can use this
+This is a simple React + TypeScript application, where daydreamers like me can check how many days are left till a certain moment.
+If you don't want to perform "complex" calculations in your head, you can use this application!
 
 https://garbalau-github.github.io/days-until.github.io/
