@@ -1,22 +1,22 @@
 ### Days Until
 
-This is a simple React + TypeScript application, where you can check how many days are left till a certain moment. If you don't want to perform "complex" calculations in your head, welcome!
+When I made this application I wanted simplicity. I wanted to conveniently get the information of how many days are left untill a certain moment. If you don't want to perform those calculations too, welcome!
 
 ### How to run?
 
-1 - CLONE PROJECT
+Clone project
 
 ```
 git clone <PROJECT URL>
 ```
 
-2 - INSTALL PACKAGES
+Install packages and dependencies
 
 ```
 npm i
 ```
 
-3 - RUN CLIENT
+Run client
 
 ```
 npm run client
